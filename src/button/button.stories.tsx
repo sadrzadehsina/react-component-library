@@ -71,3 +71,11 @@ export const WithIconAndAdornment = () => {
     </Button>
   );
 };
+
+export const Flat = () => {
+  return (
+    <Button type="primary" flat>
+      Flat Primary Button
+    </Button>
+  );
+};

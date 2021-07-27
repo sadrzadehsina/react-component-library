@@ -4,21 +4,24 @@ import { getTheme } from '../theme';
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
-  type?: string;
-  disabled?: boolean;
   Icon?: ReactChild;
   Adornment?: ReactChild;
+  type?: string;
+  disabled?: boolean;
+  flat?: boolean;
 }
 
 export const Button: FC<Props> = ({
   children,
-  type,
-  disabled,
   Icon,
   Adornment,
+  type,
+  disabled,
+  flat,
 }) => {
   const className = cn({
     ...getTheme(type),
+    'rounded-md': !flat,
     'px-5 py-2': !Icon && !Adornment,
     'py-2': Icon || Adornment,
     'pr-5': Icon && !Adornment,
@@ -31,7 +34,7 @@ export const Button: FC<Props> = ({
   return (
     <button className={className} disabled={disabled}>
       {Icon && (
-        <span className="px-5">
+        <span className="px-5 ">
           <Icon />
         </span>
       )}
