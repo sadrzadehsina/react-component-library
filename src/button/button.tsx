@@ -19,7 +19,10 @@ export const Button: FC<Props> = ({
 }) => {
   const className = cn({
     ...getTheme(type),
-    'px-5 py-2': true,
+    'px-5 py-2': !Icon && !Adornment,
+    'py-2': Icon || Adornment,
+    'pr-5': Icon && !Adornment,
+    'pl-5': !Icon && Adornment,
     'cursor-not-allowed': disabled,
     'cursor-pointer': !disabled,
     'opacity-50': disabled,
@@ -27,9 +30,17 @@ export const Button: FC<Props> = ({
 
   return (
     <button className={className} disabled={disabled}>
-      {Icon && <Icon />}
-      {children}
-      {Adornment && <Adornment />}
+      {Icon && (
+        <span className="px-5">
+          <Icon />
+        </span>
+      )}
+      <span>{children}</span>
+      {Adornment && (
+        <span className="px-5">
+          <Adornment />
+        </span>
+      )}
     </button>
   );
 };

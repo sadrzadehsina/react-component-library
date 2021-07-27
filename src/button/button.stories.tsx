@@ -43,3 +43,31 @@ export const Disabled = () => {
     </>
   );
 };
+
+export const WithIcon = () => {
+  return (
+    <Button type="primary" Icon={() => <span>i</span>}>
+      Primary Button
+    </Button>
+  );
+};
+
+export const WithAdornment = () => {
+  return (
+    <Button type="primary" Adornment={() => <span>a</span>}>
+      Primary Button
+    </Button>
+  );
+};
+
+export const WithIconAndAdornment = () => {
+  return (
+    <Button
+      type="primary"
+      Icon={() => <span>i</span>}
+      Adornment={() => <span>a</span>}
+    >
+      Primary Button
+    </Button>
+  );
+};
