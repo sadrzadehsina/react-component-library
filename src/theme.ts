@@ -1,25 +1,39 @@
 const primary = () => ({
-  'bg-blue-600': true,
-  'hover:bg-blue-800': true,
-  'text-white': true,
+  button: () => ({
+    'bg-blue-600': true,
+    'hover:bg-blue-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({
+    'text-blue-600': true,
+  }),
 });
 
 const secondary = () => ({
-  'bg-yellow-600': true,
-  'hover:bg-yellow-800': true,
-  'text-white': true,
+  button: () => ({
+    'bg-yellow-600': true,
+    'hover:bg-yellow-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({ 'text-yellow-600': true }),
 });
 
 const error = () => ({
-  'bg-red-600': true,
-  'hover:bg-red-800': true,
-  'text-white': true,
+  button: () => ({
+    'bg-red-600': true,
+    'hover:bg-red-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({ 'text-red-600': true }),
 });
 
 const success = () => ({
-  'bg-green-600': true,
-  'hover:bg-green-800': true,
-  'text-white': true,
+  button: () => ({
+    'bg-green-600': true,
+    'hover:bg-green-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({ 'text-green-600': true }),
 });
 
 const theme = {

@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import { FC, HTMLAttributes, ReactChild } from 'react';
 import cn from 'classnames';
 import { getTheme } from '../theme';
 
@@ -20,7 +20,7 @@ export const Button: FC<Props> = ({
   flat,
 }) => {
   const className = cn({
-    ...getTheme(type),
+    ...getTheme(type).button(),
     'rounded-md': !flat,
     'px-5 py-2': !Icon && !Adornment,
     'py-2': Icon || Adornment,
@@ -28,13 +28,13 @@ export const Button: FC<Props> = ({
     'pl-5': !Icon && Adornment,
     'cursor-not-allowed': disabled,
     'cursor-pointer': !disabled,
-    'opacity-50': disabled,
+    'disabled:opacity-50': disabled,
   });
 
   return (
     <button className={className} disabled={disabled}>
       {Icon && (
-        <span className="px-5 ">
+        <span className="px-5">
           <Icon />
         </span>
       )}
