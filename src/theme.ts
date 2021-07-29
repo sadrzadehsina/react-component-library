@@ -1,3 +1,14 @@
+const white = () => ({
+  button: () => ({
+    'bg-white-600': true,
+    'hover:bg-white-800': true,
+    'text-black': true,
+  }),
+  icon: () => ({
+    'text-white': true,
+  }),
+});
+
 const primary = () => ({
   button: () => ({
     'bg-blue-600': true,
@@ -37,6 +48,7 @@ const success = () => ({
 });
 
 const theme = {
+  white,
   primary,
   secondary,
   error,

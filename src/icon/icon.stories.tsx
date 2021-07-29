@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Icon from './icon';
+import { Icon } from './icon';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -13,4 +13,10 @@ export const NamedIcon = Template.bind({});
 NamedIcon.args = {
   name: 'annotation',
   type: 'primary',
+};
+
+export const WithSize = Template.bind({});
+WithSize.args = {
+  ...NamedIcon.args,
+  size: 'small',
 };

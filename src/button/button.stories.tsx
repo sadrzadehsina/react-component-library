@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from '../';
+import { Button, Icon } from '../';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -25,16 +25,19 @@ export const Disabled = () => {
           Primary Button Disabled
         </Button>
       </div>
+      <p>&nbsp;</p>
       <div>
         <Button type="secondary" disabled>
           Secondary Button Disabled
         </Button>
       </div>
+      <p>&nbsp;</p>
       <div>
         <Button type="error" disabled>
           Error Button Disabled
         </Button>
       </div>
+      <p>&nbsp;</p>
       <div>
         <Button type="success" disabled>
           Success Button Disabled
@@ -46,7 +49,7 @@ export const Disabled = () => {
 
 export const WithIcon = () => {
   return (
-    <Button type="primary" Icon={() => <span>i</span>}>
+    <Button type="primary" Icon={() => <Icon name="annotation" type="white" />}>
       Primary Button
     </Button>
   );
@@ -54,7 +57,10 @@ export const WithIcon = () => {
 
 export const WithAdornment = () => {
   return (
-    <Button type="primary" Adornment={() => <span>a</span>}>
+    <Button
+      type="primary"
+      Adornment={() => <Icon name="chevron-down" type="white" />}
+    >
       Primary Button
     </Button>
   );
@@ -64,8 +70,8 @@ export const WithIconAndAdornment = () => {
   return (
     <Button
       type="primary"
-      Icon={() => <span>i</span>}
-      Adornment={() => <span>a</span>}
+      Icon={() => <Icon name="annotation" type="white" />}
+      Adornment={() => <Icon name="chevron-down" type="white" />}
     >
       Primary Button
     </Button>
@@ -77,5 +83,29 @@ export const Flat = () => {
     <Button type="primary" flat>
       Flat Primary Button
     </Button>
+  );
+};
+
+export const WithSize = () => {
+  return (
+    <>
+      <div>
+        <Button type="primary" size="small">
+          Small Primary
+        </Button>
+      </div>
+      <p>&nbsp;</p>
+      <div>
+        <Button type="primary" size="medium">
+          Medium Primary
+        </Button>
+      </div>
+      <p>&nbsp;</p>
+      <div>
+        <Button type="primary" size="large">
+          Large Primary
+        </Button>
+      </div>
+    </>
   );
 };
