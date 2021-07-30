@@ -1,7 +1,7 @@
 const white = () => ({
   button: () => ({
     'bg-white-600': true,
-    'hover:bg-white-800': true,
+    'hover:bg-gray-200': true,
     'text-black': true,
   }),
   icon: () => ({
