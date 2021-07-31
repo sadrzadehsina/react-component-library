@@ -1,11 +1,14 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Thing } from '../.';
-import { PrimaryButton } from '../src';
+import { Button } from '../.';
 
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Button type="primary"></Button>
+    </div>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('root'));

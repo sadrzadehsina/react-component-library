@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css';
+import './tailwind.css';
 
 export * from './button';
 export * from './icon';
