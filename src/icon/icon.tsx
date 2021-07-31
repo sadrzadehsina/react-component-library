@@ -1,4 +1,4 @@
-import { useMemo, FC, HTMLAttributes } from 'react';
+import React, { useMemo, FC, HTMLAttributes } from 'react';
 import * as Icons from '@heroicons/react/solid';
 import cn from 'classnames';
 import { getTheme } from '../theme';
@@ -14,7 +14,7 @@ const toPascalCase = function (string) {
     .join('');
 };
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   name: string;
   type?: string;
   size?: string;

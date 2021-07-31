@@ -49,7 +49,10 @@ export const Disabled = () => {
 
 export const WithIcon = () => {
   return (
-    <Button type="primary" Icon={() => <Icon name="annotation" type="white" />}>
+    <Button
+      type="primary"
+      renderIcon={() => <Icon name="annotation" type="white" />}
+    >
       Primary Button
     </Button>
   );
@@ -59,7 +62,7 @@ export const WithAdornment = () => {
   return (
     <Button
       type="primary"
-      Adornment={() => <Icon name="chevron-down" type="white" />}
+      renderAdornment={() => <Icon name="chevron-down" type="white" />}
     >
       Primary Button
     </Button>
@@ -70,8 +73,8 @@ export const WithIconAndAdornment = () => {
   return (
     <Button
       type="primary"
-      Icon={() => <Icon name="annotation" type="white" />}
-      Adornment={() => <Icon name="chevron-down" type="white" />}
+      renderIcon={() => <Icon name="annotation" type="white" />}
+      renderAdornment={() => <Icon name="chevron-down" type="white" />}
     >
       Primary Button
     </Button>

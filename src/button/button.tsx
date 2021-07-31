@@ -1,26 +1,26 @@
-import { FC, HTMLAttributes, ReactChild } from 'react';
+import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import cn from 'classnames';
 import { getTheme } from '../theme';
 import { getSize } from '../size';
 
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
-  Icon?: ReactChild;
-  Adornment?: ReactChild;
   type?: string;
   size?: string;
   disabled?: boolean;
   flat?: boolean;
+  renderIcon?: Function;
+  renderAdornment?: Function;
 }
 
 export const Button: FC<Props> = ({
   children,
-  Icon,
-  Adornment,
   type = 'primary',
   size = 'medium',
   disabled,
   flat,
+  renderIcon,
+  renderAdornment,
 }) => {
   const className = cn({
     ...getTheme(type).button(),
@@ -36,17 +36,9 @@ export const Button: FC<Props> = ({
   return (
     <button className={className} disabled={disabled}>
       <div className="flex flex-row space-x-2">
-        {Icon && (
-          <div>
-            <Icon size={size} />
-          </div>
-        )}
+        {renderIcon && <div>{renderIcon()}</div>}
         <div className="flex-grow">{children}</div>
-        {Adornment && (
-          <div>
-            <Adornment />
-          </div>
-        )}
+        {renderAdornment && <div>{renderAdornment()}</div>}
       </div>
     </button>
   );

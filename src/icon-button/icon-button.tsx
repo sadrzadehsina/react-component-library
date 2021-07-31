@@ -1,10 +1,6 @@
-import { useMemo, FC, HTMLAttributes } from 'react';
-import cn from 'classnames';
+import React, { FC, HTMLAttributes } from 'react';
 import { Button, Icon } from '..';
-import { getTheme } from '../theme';
-import { getSize } from '../size';
-
-export interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   name: string;
   type?: string;
   size?: string;
