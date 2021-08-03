@@ -1,1 +1,1 @@
-export { default } from './truncate';
+export * from './truncate';
