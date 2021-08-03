@@ -4,7 +4,7 @@ import { Container } from '../';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: 'Components/Layout/Cotnaoner',
+  title: 'Components/Layout/Container',
 };
 
 export const Fixed = () => (
