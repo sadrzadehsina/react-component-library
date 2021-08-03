@@ -7,7 +7,8 @@ module.exports = {
   variants: {
     extend: {
       opacity: ['disabled'],
+      lineClamp: ['responsive', 'hover'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
