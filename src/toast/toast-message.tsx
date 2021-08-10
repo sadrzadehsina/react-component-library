@@ -49,11 +49,9 @@ export const ToastMessage = ({
         </div>
         <div
           onClick={() => onRemove && onRemove(id)}
-          className="w-10 h-12 mr-2 items-center mx-auto text-center leading-none text-lg"
+          className="w-10 h-12 items-center align-middle mx-auto text-center leading-none text-lg"
         >
-          <div className="mx-auto my-auto h-full text-center text-gray-600 cursor-pointer hover:scale-105 transform ">
-            <Icon name="search" />
-          </div>
+          <Icon name="x" size="small" type="info" />
         </div>
       </div>
     </div>

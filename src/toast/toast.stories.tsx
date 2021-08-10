@@ -7,7 +7,7 @@ export default {
   title: 'Components/Toast',
 };
 
-const lifetime = '3000';
+const lifetime = '10000000000';
 
 const MainWithProvider = () => {
   const { pushError, pushSuccess, pushWarning, pushInfo } = useToast();
