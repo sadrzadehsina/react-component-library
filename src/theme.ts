@@ -7,6 +7,7 @@ const white = () => ({
   icon: () => ({
     'text-white': true,
   }),
+  toast: () => ({ 'border-white-600': true }),
 });
 
 const primary = () => ({
@@ -18,6 +19,7 @@ const primary = () => ({
   icon: () => ({
     'text-blue-600': true,
   }),
+  toast: () => ({ 'border-blue-600': true }),
 });
 
 const secondary = () => ({
@@ -27,6 +29,7 @@ const secondary = () => ({
     'text-white': true,
   }),
   icon: () => ({ 'text-yellow-600': true }),
+  toast: () => ({ 'border-yellow-600': true }),
 });
 
 const error = () => ({
@@ -36,6 +39,7 @@ const error = () => ({
     'text-white': true,
   }),
   icon: () => ({ 'text-red-600': true }),
+  toast: () => ({ 'border-red-600': true }),
 });
 
 const success = () => ({
@@ -45,6 +49,27 @@ const success = () => ({
     'text-white': true,
   }),
   icon: () => ({ 'text-green-600': true }),
+  toast: () => ({ 'border-green-600': true }),
+});
+
+const warning = () => ({
+  button: () => ({
+    'bg-yellow-600': true,
+    'hover:bg-yellow-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({ 'text-yellow-600': true }),
+  toast: () => ({ 'border-yellow-600': true }),
+});
+
+const info = () => ({
+  button: () => ({
+    'bg-gray-600': true,
+    'hover:bg-gray-800': true,
+    'text-white': true,
+  }),
+  icon: () => ({ 'text-gray-600': true }),
+  toast: () => ({ 'border-gray-600': true }),
 });
 
 const theme = {
@@ -53,9 +78,12 @@ const theme = {
   secondary,
   error,
   success,
+  warning,
+  info,
 };
 
-const getTheme = (type) => (theme[type] ? theme[type]() : primary());
+const getTheme = (type) =>
+  type && theme[type.toLowerCase()] ? theme[type.toLowerCase()]() : primary();
 
 export default theme;
 export { getTheme };

@@ -1,7 +1,6 @@
-import React, { FC, HTMLAttributes, ReactChild } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  children: ReactChild;
   renderHeader: Function;
   renderBody: Function;
   renderFooter: Function;
