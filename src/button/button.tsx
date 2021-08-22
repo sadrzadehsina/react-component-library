@@ -9,8 +9,8 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   size?: string;
   disabled?: boolean;
   flat?: boolean;
-  renderIcon?: Function;
-  renderAdornment?: Function;
+  startIcon?: ReactChild;
+  endIcon?: ReactChild;
 }
 
 export const Button: FC<Props> = ({
@@ -20,7 +20,8 @@ export const Button: FC<Props> = ({
   disabled,
   flat,
   renderIcon,
-  renderAdornment,
+  startIcon,
+  endIcon,
 }) => {
   const className = cn({
     ...getTheme(type).button(),
@@ -36,9 +37,9 @@ export const Button: FC<Props> = ({
   return (
     <button className={className} disabled={disabled}>
       <div className="flex flex-row space-x-2">
-        {renderIcon && <div>{renderIcon()}</div>}
+        {startIcon && <div>{startIcon}</div>}
         <div className="flex-grow">{children}</div>
-        {renderAdornment && <div>{renderAdornment()}</div>}
+        {endIcon && <div>{endIcon}</div>}
       </div>
     </button>
   );

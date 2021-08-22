@@ -47,35 +47,17 @@ export const Disabled = () => {
   );
 };
 
-export const WithIcon = () => {
+export const Starticon = () => {
   return (
-    <Button
-      type="primary"
-      renderIcon={() => <Icon name="annotation" type="white" />}
-    >
+    <Button type="primary" startIcon={<Icon name="annotation" type="white" />}>
       Primary Button
     </Button>
   );
 };
 
-export const WithAdornment = () => {
+export const EndIcon = () => {
   return (
-    <Button
-      type="primary"
-      renderAdornment={() => <Icon name="chevron-down" type="white" />}
-    >
-      Primary Button
-    </Button>
-  );
-};
-
-export const WithIconAndAdornment = () => {
-  return (
-    <Button
-      type="primary"
-      renderIcon={() => <Icon name="annotation" type="white" />}
-      renderAdornment={() => <Icon name="chevron-down" type="white" />}
-    >
+    <Button type="primary" endIcon={<Icon name="chevron-down" type="white" />}>
       Primary Button
     </Button>
   );
