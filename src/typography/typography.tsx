@@ -26,7 +26,7 @@ const variantMap = {
 };
 
 export const Typography: FC<Props> = ({ children, variant = 'body1' }) => {
-  const Variant = variantMap[variant];
+  const Variant = variantMap[variant as string];
 
   return <Variant>{children}</Variant>;
 };

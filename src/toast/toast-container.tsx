@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { ToastContext } from './toast-provider';
 import { ToastMessage } from './toast-message';
 
@@ -6,8 +6,6 @@ export const ToastContainer = () => {
   const context = useContext(ToastContext);
 
   const handleRemove = (id: string) => context?.remove(id);
-
-  console.log(context);
 
   return (
     <div className="fixed z-50 w-full md:max-w-sm p-4 md:p-4 max-h-screen overflow-hidden pointer-events-none">

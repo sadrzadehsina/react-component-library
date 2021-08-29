@@ -19,7 +19,6 @@ export const Button: FC<Props> = ({
   size = 'medium',
   disabled,
   flat,
-  renderIcon,
   startIcon,
   endIcon,
 }) => {

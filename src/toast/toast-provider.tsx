@@ -1,4 +1,4 @@
-import {
+import React, {
   useCallback,
   createContext,
   useContext,
@@ -18,7 +18,7 @@ export type ToastProviderType = {
 
 export type Toast = {
   id: string;
-  lifeTime: number;
+  lifetime: number;
   message: string | ReactNode;
   type?: ToastMessageType;
   truncate?: boolean;
@@ -27,14 +27,36 @@ export type Toast = {
 };
 
 export type ToastContextType = {
-  pushError(message: string, lifeTime?: number, truncate?: boolean): void;
-  pushWarning(message: string, lifeTime?: number, truncate?: boolean): void;
-  pushSuccess(message: string, lifeTime?: number, truncate?: boolean): void;
-  pushInfo(message: string, lifeTime?: number, truncate?: boolean): void;
+  toasts: Array<Toast>;
+  pushError(
+    header: string,
+    message: string,
+    lifetime?: number,
+    truncate?: boolean
+  ): void;
+  pushWarning(
+    header: string,
+    message: string,
+    lifetime?: number,
+    truncate?: boolean
+  ): void;
+  pushSuccess(
+    header: string,
+    message: string,
+    lifetime?: number,
+    truncate?: boolean
+  ): void;
+  pushInfo(
+    header: string,
+    message: string,
+    lifetime?: number,
+    truncate?: boolean
+  ): void;
   push(
+    header: string,
     message: string,
     type: ToastMessageType,
-    lifeTime?: number,
+    lifetime?: number,
     truncate?: boolean
   ): void;
   remove(id: string): void;
@@ -51,9 +73,9 @@ export const ToastProvider = ({ children }: ToastProviderType) => {
 
   const push = useCallback(
     (
-      header?: string,
+      header: string,
       message: string,
-      type: TostMessageType,
+      type: ToastMessageType,
       lifetime?: number,
       truncate?: boolean
     ) => {
@@ -74,25 +96,25 @@ export const ToastProvider = ({ children }: ToastProviderType) => {
   );
 
   const pushError = useCallback(
-    (header?: string, message: string, lifetime?: number, truncate?: boolean) =>
+    (header: string, message: string, lifetime?: number, truncate?: boolean) =>
       push(header, message, 'Error', lifetime, truncate),
     [push]
   );
 
   const pushWarning = useCallback(
-    (header?: string, message: string, lifetime?: number, truncate?: boolean) =>
+    (header: string, message: string, lifetime?: number, truncate?: boolean) =>
       push(header, message, 'Warning', lifetime, truncate),
     [push]
   );
 
   const pushSuccess = useCallback(
-    (header?: string, message: string, lifetime?: number, truncate?: boolean) =>
+    (header: string, message: string, lifetime?: number, truncate?: boolean) =>
       push(header, message, 'Success', lifetime, truncate),
     [push]
   );
 
   const pushInfo = useCallback(
-    (header?: string, message: string, lifetime?: number, truncate?: boolean) =>
+    (header: string, message: string, lifetime?: number, truncate?: boolean) =>
       push(header, message, 'Info', lifetime, truncate),
     [push]
   );

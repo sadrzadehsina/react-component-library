@@ -19,8 +19,8 @@ export const ToastMessage = ({
   message,
   lifetime,
   onRemove,
-  truncate = false,
-  icon,
+  // truncate = false,
+  // icon,
   type,
 }: ToastMessage) => {
   useEffect(() => {
