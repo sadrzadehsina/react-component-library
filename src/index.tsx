@@ -11,3 +11,4 @@ export * from './toast';
 export * from './section';
 export * from './truncate';
 export * from './typography';
+export * from './theme-provider';
