@@ -7,8 +7,19 @@ export default {
   title: 'Theme Provider',
 };
 
+const theme = {
+  light: {
+    primaryColor: '#fff',
+    secondaryColor: '#222',
+  },
+  dark: {
+    primaryColor: '#222',
+    secondaryColor: '#fff',
+  },
+};
+
 export const Default = () => (
-  <ThemeProvider>
+  <ThemeProvider theme={theme}>
     <Button>Button</Button>
   </ThemeProvider>
 );
