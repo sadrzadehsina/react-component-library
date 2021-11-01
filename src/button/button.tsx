@@ -1,8 +1,6 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import cn from 'classnames';
-import { getTheme } from '../theme';
 import { getSize } from '../size';
-import { useTheme } from '../theme-provider';
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
   type?: string;
@@ -23,8 +21,10 @@ export const Button: FC<Props> = ({
   endIcon,
 }) => {
   const className = cn({
-    ...getTheme(type).button(),
     ...getSize(size).button(),
+    [`bg-${type}-background`]: true,
+    [`hover:bg-${type}-background-dark`]: true,
+    [`text-${type}-text`]: true,
     'rounded-md': !flat,
     'px-3 py-2': true,
     'cursor-not-allowed': disabled,
@@ -32,10 +32,6 @@ export const Button: FC<Props> = ({
     'disabled:opacity-50': disabled,
     'font-size-lg': true,
   });
-
-  const { currentTheme } = useTheme();
-
-  console.log(currentTheme);
 
   return (
     <button className={className} disabled={disabled}>

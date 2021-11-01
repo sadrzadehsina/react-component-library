@@ -4,16 +4,15 @@ import React, {
   ReactChild,
   createContext,
   useCallback,
-  useContext,
   useState,
+  useEffect,
 } from 'react';
 
-type ContextType = {
-  theme: object;
-  currentTheme: object;
-  updateTheme: (theme: object) => void;
-};
+import { ThemeContextType } from './types';
 
+import { mapTheme } from './map-theme';
+
+import { themes } from '../themes';
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
   theme: {
@@ -22,30 +21,33 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   };
 }
 
-const Theme = createContext<ContextType>({
-  theme: {},
-  currentTheme: {},
-  updateTheme: () => {},
+export const Theme = createContext<ThemeContextType>({
+  currentTheme: '',
+  applyTheme: () => {},
 });
 
-export const useTheme = () => {
-  const theme = useContext<ContextType>(Theme);
-
-  if (!theme) throw '`useTheme` should be in `ThemeProvider`';
-
-  return theme;
-};
-
 export const ThemeProvider: FC<Props> = ({ theme, children }) => {
-  const [currentTheme, setCurrentTheme] = useState<object>(theme.dark);
+  const [currentTheme, setCurrentTheme] = useState<string>('');
 
-  const updateTheme = useCallback(
-    (newTheme: object) => setCurrentTheme(newTheme),
-    []
-  );
+  const applyTheme = useCallback((newTheme) => {
+    const themeObject = mapTheme(themes[newTheme]);
+
+    if (!themeObject) return;
+
+    const root = document.documentElement;
+
+    Object.keys(themeObject).forEach((property) => {
+      if (property === 'name') return;
+      root.style.setProperty(property, themeObject[property]);
+    });
+
+    setCurrentTheme(newTheme);
+  }, []);
+
+  useEffect(() => applyTheme(theme), [theme]);
 
   return (
-    <Theme.Provider value={{ theme, currentTheme, updateTheme }}>
+    <Theme.Provider value={{ currentTheme, applyTheme }}>
       {children}
     </Theme.Provider>
   );
