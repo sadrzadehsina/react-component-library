@@ -97,25 +97,25 @@ export const ToastProvider = ({ children }: ToastProviderType) => {
 
   const pushError = useCallback(
     (header: string, message: string, lifetime?: number, truncate?: boolean) =>
-      push(header, message, 'Error', lifetime, truncate),
+      push(header, message, 'error', lifetime, truncate),
     [push]
   );
 
   const pushWarning = useCallback(
     (header: string, message: string, lifetime?: number, truncate?: boolean) =>
-      push(header, message, 'Warning', lifetime, truncate),
+      push(header, message, 'warning', lifetime, truncate),
     [push]
   );
 
   const pushSuccess = useCallback(
     (header: string, message: string, lifetime?: number, truncate?: boolean) =>
-      push(header, message, 'Success', lifetime, truncate),
+      push(header, message, 'success', lifetime, truncate),
     [push]
   );
 
   const pushInfo = useCallback(
     (header: string, message: string, lifetime?: number, truncate?: boolean) =>
-      push(header, message, 'Info', lifetime, truncate),
+      push(header, message, 'info', lifetime, truncate),
     [push]
   );
 

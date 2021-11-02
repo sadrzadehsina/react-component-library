@@ -36,14 +36,14 @@ export const ToastMessage = ({
       className={cn(
         'flex w-full visible flex-row shadow-lg border-l-4',
         'duration-100 cursor-pointer transform transition-all',
-        'hover:scale-102 bg-white',
-        getTheme(type).toast()
+        'hover:scale-102 bg-default',
+        `border-${type}`
       )}
     >
       <div className="flex flex-row p-2 flex-no-wrap w-full">
         <div className="flex flex-col flex-no-wrap px-1 w-full">
           <div className="flex my-auto font-bold select-none">{header}</div>
-          <p className="-mt-0.5 my-auto break-all flex text-gray-600 text-sm">
+          <p className="-mt-0.5 my-auto break-all flex text-default text-sm">
             {message}
           </p>
         </div>
