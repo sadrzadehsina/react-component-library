@@ -26,7 +26,20 @@ module.exports = {
           DEFAULT: 'var(--background-secondary)',
           dark: 'var(--background-secondary-dark)',
         },
+        'success-background': {
+          light: 'var(--background-success-light)',
+          DEFAULT: 'var(--background-success)',
+          dark: 'var(--background-success-dark)',
+        },
+        'error-background': {
+          light: 'var(--background-error-light)',
+          DEFAULT: 'var(--background-error)',
+          dark: 'var(--background-error-dark)',
+        },
         'primary-text': 'var(--color-text-primary)',
+        'secondary-text': 'var(--color-text-secondary)',
+        'success-text': 'var(--color-text-success)',
+        'error-text': 'var(--color-text-error)',
       },
     },
     backgroundColor: (theme) => ({

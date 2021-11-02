@@ -3,8 +3,18 @@ import React from 'react';
 import { Button, Icon } from '../';
 
 // eslint-disable-next-line import/no-anonymous-default-export
+
+import { ThemeProvider } from '../theme-provider';
+
 export default {
   title: 'Components/Button',
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme="light">
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export const Primary = () => <Button type="primary">Primary Button</Button>;
