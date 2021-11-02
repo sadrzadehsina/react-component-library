@@ -2,10 +2,18 @@ import React from 'react';
 
 import { Card } from './card';
 import { Button } from '../button';
+import { ThemeProvider } from '..';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Card',
+  decorators: [
+    (Story) => (
+      <ThemeProvider theme="light">
+        <Story />
+      </ThemeProvider>
+    ),
+  ],
 };
 
 export const Main = () => {

@@ -4,6 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        default: {
+          light: 'var(--color-default-light)',
+          DEFAULT: 'var(--color-default)',
+          dark: 'var(--color-default-dark)',
+        },
         primary: {
           light: 'var(--color-primary-light)',
           DEFAULT: 'var(--color-primary)',

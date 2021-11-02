@@ -2,6 +2,10 @@ import tinyColor from 'tinycolor2';
 
 export const mapTheme = (theme) => {
   return {
+    '--color-default-light': tinyColor(theme.default).brighten(),
+    '--color-default': theme.default,
+    '--color-default-dark': tinyColor(theme.default).darken(),
+
     '--color-primary-light': tinyColor(theme.primary).brighten(),
     '--color-primary': theme.primary,
     '--color-primary-dark': tinyColor(theme.primary).darken(),
