@@ -4,8 +4,6 @@ import cn from 'classnames';
 import { Toast } from './toast-provider';
 import { Icon } from '../icon';
 
-import { getTheme } from '../theme';
-
 type ToastMessage = {
   id: string;
   lifetime?: number;
@@ -42,8 +40,10 @@ export const ToastMessage = ({
     >
       <div className="flex flex-row p-2 flex-no-wrap w-full">
         <div className="flex flex-col flex-no-wrap px-1 w-full">
-          <div className="flex my-auto font-bold select-none">{header}</div>
-          <p className="-mt-0.5 my-auto break-all flex text-default text-sm">
+          <div className="flex my-auto font-bold select-none text-default-text">
+            {header}
+          </div>
+          <p className="-mt-0.5 my-auto break-all flex text-default-text text-sm">
             {message}
           </p>
         </div>

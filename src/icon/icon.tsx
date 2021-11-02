@@ -1,7 +1,6 @@
 import React, { useMemo, FC, HTMLAttributes } from 'react';
 import * as Icons from '@heroicons/react/solid';
 import cn from 'classnames';
-import { getTheme } from '../theme';
 import { getSize } from '../size';
 
 //NOTE: possible candidate to be a utility
@@ -22,8 +21,8 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 export const Icon: FC<Props> = ({ name, type, size }) => {
   const className = cn({
-    ...getTheme(type).icon(),
     ...getSize(size).icon(),
+    [`text-${type}`]: true,
   });
 
   const iconName = useMemo(() => toPascalCase(name) + 'Icon', [name]);

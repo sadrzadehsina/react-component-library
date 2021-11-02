@@ -9,7 +9,7 @@ export default {
   title: 'Components/Toast',
   decorators: [
     (Story) => (
-      <ThemeProvider theme="light">
+      <ThemeProvider theme="dark">
         <Story />
       </ThemeProvider>
     ),
