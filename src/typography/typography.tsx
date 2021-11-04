@@ -7,22 +7,48 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 const variantMap = {
-  h1: (props) => <h1 {...props} />,
-  h2: (props) => <h2 {...props} />,
-  h3: (props) => <h3 {...props} />,
-  h4: (props) => <h4 {...props} />,
-  h5: (props) => <h5 {...props} />,
-  h6: (props) => <h6 {...props} />,
-  subtitle1: (props) => (
-    <h6 {...props} className={cn('text-sm', props.className)} />
+  h1: (props) => (
+    <h1
+      {...props}
+      className="text-6xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
   ),
-  subtitle2: (props) => (
-    <h6 {...props} className={cn('text-xs', props.className)} />
+  h2: (props) => (
+    <h2
+      {...props}
+      className="text-5xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
   ),
-  body1: (props) => (
-    <p {...props} className={cn('text-base', props.className)} />
+  h3: (props) => (
+    <h3
+      {...props}
+      className="text-4xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
   ),
-  body2: (props) => <p {...props} className={cn('text-sm', props.className)} />,
+  h4: (props) => (
+    <h4
+      {...props}
+      className="text-3xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
+  ),
+  h5: (props) => (
+    <h5
+      {...props}
+      className="text-2xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
+  ),
+  h6: (props) => (
+    <h6
+      {...props}
+      className="text-1xl font-normal leading-normal mt-0 mb-2 text-default-text"
+    />
+  ),
+  body: (props) => (
+    <p
+      {...props}
+      className="text-base font-light leading-relaxed mt-0 mb-4 text-default-text"
+    />
+  ),
 };
 
 export const Typography: FC<Props> = ({ children, variant = 'body1' }) => {

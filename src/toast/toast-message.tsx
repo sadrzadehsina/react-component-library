@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import { Toast } from './toast-provider';
 import { Icon } from '../icon';
+import { Typography } from '../typography';
 
 type ToastMessage = {
   id: string;
@@ -40,12 +41,10 @@ export const ToastMessage = ({
     >
       <div className="flex flex-row p-2 flex-no-wrap w-full">
         <div className="flex flex-col flex-no-wrap px-1 w-full">
-          <div className="flex my-auto font-bold select-none text-default-text">
-            {header}
+          <div className="flex my-auto font-bold select-none">
+            <Typography variant="h6">{header}</Typography>
           </div>
-          <p className="-mt-0.5 my-auto break-all flex text-default-text text-sm">
-            {message}
-          </p>
+          <Typography variant="body">{message}</Typography>
         </div>
         <div
           onClick={() => onRemove && onRemove(id)}
