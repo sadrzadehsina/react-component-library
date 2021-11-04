@@ -1,19 +1,10 @@
 import React, { useEffect } from 'react';
 
-import { ThemeProvider } from '..';
-
 import { ToastProvider, useToast } from '.';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Toast',
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme="dark">
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 const lifetime = '10000000000';

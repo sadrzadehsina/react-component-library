@@ -1,18 +1,10 @@
 import React from 'react';
-import { ThemeProvider } from '..';
 
 import { Typography } from './typography';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Typography',
-  decorators: [
-    (Story) => (
-      <ThemeProvider theme="dark">
-        <Story />
-      </ThemeProvider>
-    ),
-  ],
 };
 
 export const Heading = () => {

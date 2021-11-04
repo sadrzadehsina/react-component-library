@@ -1,10 +1,9 @@
 import React, { FC, HTMLAttributes, ReactChild } from 'react';
 import cn from 'classnames';
-import { getSize } from '../size';
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
   type?: string;
-  size?: string;
+  size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
   flat?: boolean;
   startIcon?: ReactChild;
@@ -21,7 +20,9 @@ export const Button: FC<Props> = ({
   endIcon,
 }) => {
   const className = cn({
-    ...getSize(size).button(),
+    'text-sm': size === 'small',
+    'text-md': size === 'medium',
+    'text-lg': size === 'large',
     [`bg-${type}-background`]: true,
     [`hover:bg-${type}-background-dark`]: true,
     [`text-${type}-text`]: true,

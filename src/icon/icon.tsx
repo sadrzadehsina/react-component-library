@@ -1,7 +1,6 @@
 import React, { useMemo, FC, HTMLAttributes } from 'react';
 import * as Icons from '@heroicons/react/solid';
 import cn from 'classnames';
-import { getSize } from '../size';
 
 //NOTE: possible candidate to be a utility
 const toPascalCase = function (string) {
@@ -16,12 +15,14 @@ const toPascalCase = function (string) {
 interface Props extends HTMLAttributes<HTMLDivElement> {
   name: string;
   type?: string;
-  size?: string;
+  size?: 'small' | 'medium' | 'large';
 }
 
-export const Icon: FC<Props> = ({ name, type, size }) => {
+export const Icon: FC<Props> = ({ name, type, size = 'medium' }) => {
   const className = cn({
-    ...getSize(size).icon(),
+    'w-5 h-5': size === 'small',
+    'w-7 h-7': size === 'medium',
+    'w-9 h-9': size === 'large',
     [`text-${type}`]: true,
   });
 
