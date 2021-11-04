@@ -3,6 +3,8 @@ import cn from 'classnames';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
+  direction: 'row' | 'column';
+  spacing: Number;
 }
 
 export const Stack: FC<Props> = ({
