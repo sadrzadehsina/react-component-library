@@ -16,13 +16,14 @@ export const Stack: FC<Props> = ({
     <div
       className={cn(
         'flex',
+        'items-center',
         { 'flex-row': direction === 'row' },
         { 'flex-col': direction === 'column' },
         [`gap-${spacing}`]
       )}
     >
       {React.Children.map(children, (child) => (
-        <div>{child}</div>
+        <>{child}</>
       ))}
     </div>
   );

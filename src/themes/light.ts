@@ -22,4 +22,14 @@ export default {
   backgroundError: '#D50000',
   backgroundWarning: '#FFCA28',
   backgroundInfo: '#EEEEEE',
+
+  // named colors
+  alertBackgroundError: '#fceded',
+  alertTextError: '#5e2020',
+  alertBackgroundSuccess: '#edf7ed',
+  alertTextSuccess: '#1d441f',
+  alertBackgroundWarning: '#fff4e5',
+  alertTextWarning: '#663b00',
+  alertBackgroundInfo: '#e5f5fc',
+  alertTextInfo: '#004260',
 };

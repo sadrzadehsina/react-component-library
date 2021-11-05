@@ -79,6 +79,15 @@ module.exports = {
         'error-text': 'var(--color-text-error)',
         'warning-text': 'var(--color-text-warning)',
         'info-text': 'var(--color-text-info)',
+
+        'alert-background-error': 'var(--alert-background-error)',
+        'alert-text-error': 'var(--alert-text-error)',
+        'alert-background-success': 'var(--alert-background-success)',
+        'alert-text-success': 'var(--alert-text-success)',
+        'alert-background-warning': 'var(--alert-background-warning)',
+        'alert-text-warning': 'var(--alert-text-warning)',
+        'alert-background-info': 'var(--alert-background-info)',
+        'alert-text-info': 'var(--alert-text-info)',
       },
     },
     backgroundColor: (theme) => ({

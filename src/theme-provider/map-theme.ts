@@ -67,5 +67,14 @@ export const mapTheme = (theme) => {
     '--background-info-light': tinyColor(theme.backgroundInfo).brighten(),
     '--background-info': theme.backgroundInfo,
     '--background-info-dark': tinyColor(theme.backgroundInfo).darken(),
+
+    '--alert-background-error': theme.alertBackgroundError,
+    '--alert-text-error': theme.alertTextError,
+    '--alert-background-success': theme.alertBackgroundSuccess,
+    '--alert-text-success': theme.alertTextSuccess,
+    '--alert-background-warning': theme.alertBackgroundWarning,
+    '--alert-text-warning': theme.alertTextWarning,
+    '--alert-background-info': theme.alertBackgroundInfo,
+    '--alert-text-info': theme.alertTextInfo,
   };
 };
