@@ -38,7 +38,9 @@ export const mapTheme = (theme) => {
     '--color-text-warning': theme.textWarning,
     '--color-text-info': theme.textInfo,
 
+    '--background-default-light': tinyColor(theme.backgroundDefault).brighten(),
     '--background-default': theme.backgroundDefault,
+    '--background-default-dark': tinyColor(theme.backgroundDefault).darken(),
 
     '--background-primary-light': tinyColor(theme.backgroundPrimary).brighten(),
     '--background-primary': theme.backgroundPrimary,

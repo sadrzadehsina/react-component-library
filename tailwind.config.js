@@ -40,7 +40,11 @@ module.exports = {
           dark: 'var(--color-info-dark)',
         },
 
-        'default-background': 'var(--background-default)',
+        'default-background': {
+          light: 'var(--background-default-light)',
+          DEFAULT: 'var(--background-default)',
+          dark: 'var(--background-default-dark)',
+        },
         'primary-background': {
           light: 'var(--background-primary-light)',
           DEFAULT: 'var(--background-primary)',
