@@ -5,5 +5,5 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Section: FC<Props> = ({ children }) => {
-  return <div className="section p-8">{children}</div>;
+  return <div className="p-8">{children}</div>;
 };

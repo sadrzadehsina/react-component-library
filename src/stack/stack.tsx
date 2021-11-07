@@ -11,12 +11,17 @@ export const Stack: FC<Props> = ({
   children,
   direction = 'row',
   spacing = 2,
+  align = 'start',
 }) => {
   return (
     <div
       className={cn(
         'flex',
+        'flex-1',
         'items-center',
+        { 'justify-start': align === 'start' },
+        { 'justify-end': align === 'end' },
+        { 'justify-center': align === 'center' },
         { 'flex-row': direction === 'row' },
         { 'flex-col': direction === 'column' },
         [`gap-${spacing}`]

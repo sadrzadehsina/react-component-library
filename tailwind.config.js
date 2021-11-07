@@ -92,6 +92,12 @@ module.exports = {
         'alert-text-warning': 'var(--alert-text-warning)',
         'alert-background-info': 'var(--alert-background-info)',
         'alert-text-info': 'var(--alert-text-info)',
+
+        'paper-background': 'var(--paper-background)',
+        'paper-text': 'var(--paper-text)',
+
+        'dialog-background': 'var(--dialog-background)',
+        'dialog-text': 'var(--dialog-text)',
       },
     },
     backgroundColor: (theme) => ({

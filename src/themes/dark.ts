@@ -32,4 +32,10 @@ export default {
   alertTextWarning: '#ffe2b7',
   alertBackgroundInfo: '#061216',
   alertTextInfo: '#b6e5f9',
+
+  paperBackground: '#222',
+  paperText: '#f8f8f8',
+
+  dialogBackground: '#222',
+  dialogText: '#f8f8f8',
 };

@@ -78,5 +78,11 @@ export const mapTheme = (theme) => {
     '--alert-text-warning': theme.alertTextWarning,
     '--alert-background-info': theme.alertBackgroundInfo,
     '--alert-text-info': theme.alertTextInfo,
+
+    '--paper-background': theme.paperBackground,
+    '--paper-text': theme.paperText,
+
+    '--dialog-background': theme.dialogBackground,
+    '--dialog-text': theme.dialogText,
   };
 };
