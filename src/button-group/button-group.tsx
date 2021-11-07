@@ -3,6 +3,7 @@ import { Stack } from '../stack';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
+  align: 'start' | 'center' | 'end';
 }
 
 export const ButtonGroup: FC<Props> = ({ children, align = 'start' }) => {

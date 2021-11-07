@@ -5,8 +5,21 @@ import { Button } from '../button';
 import { ButtonGroup } from '../button-group';
 import { IconButton } from '../icon-button';
 
+type ButtonType = {
+  children: ReactChild;
+  type?: string;
+  size?: 'small' | 'medium' | 'large';
+  disabled?: boolean;
+  flat?: boolean;
+  startIcon?: ReactChild;
+  endIcon?: ReactChild;
+};
 interface Props extends HTMLAttributes<HTMLDivElement> {
   children: ReactChild;
+  title: String;
+  open: Boolean;
+  size: 'small' | 'medium' | 'large';
+  buttons: Array<ButtonType>;
 }
 
 export const Dialog: FC<Props> = ({
