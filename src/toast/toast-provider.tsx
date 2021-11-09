@@ -10,7 +10,7 @@ import { nanoid } from 'nanoid';
 
 import { ToastContainer } from './toast-container';
 
-type ToastMessageType = 'Info' | 'Success' | 'Warning' | 'Error';
+type ToastMessageType = 'info' | 'success' | 'warning' | 'error';
 
 export type ToastProviderType = {
   children: ReactNode;
